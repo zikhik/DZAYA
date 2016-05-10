@@ -9,33 +9,9 @@ template <typename SomeValueType>
 class Matrix;
 
 template <typename SomeValueType>
-std::ostream &operator << (std::ostream &out, const Matrix<SomeValueType> &temp);/*
-{
-	for (int i = 0; i < temp.n; i++)
-	{
-		for (int j = 0; j < temp.m; j++)
-		{
-			out << temp.matrix[i][j] << " ";
-		}
-		out << endl;
-	}
-	return out;
-}*/
+std::ostream &operator << (std::ostream &out, const Matrix<SomeValueType> &temp);
 template <typename SomeValueType>
-std::istream &operator >> (std::istream &input, Matrix<SomeValueType> &matr);/*
-{
-    for (int i = 0; i < matr.n; i++) 
-    {
-        for (int j = 0; j < matr.m; j++) 
-        {
-            if (!(input >> matr.matrix[i][j]))
-            {
-                throw "Error matrix fill";
-            }
-        }
-    }
-    return input;
-}*/
+std::istream &operator >> (std::istream &input, Matrix<SomeValueType> &matr);
 template <typename SomeValueType>
 class Matrix
 {
@@ -56,36 +32,8 @@ public:
 	friend std::istream &operator >> <>(std::istream &input, Matrix<SomeValueType> &matr);
 private:
 	SomeValueType **matrix;
-	unsigned int n;	// ñòðîê
-	unsigned int m;	// ñòîëáöîâ
-};/*
-template <typename SomeValueType>
-std::ostream &operator << (std::ostream &out, const Matrix<SomeValueType> &temp)
-{
-	for (int i = 0; i < temp.n; i++)
-	{
-		for (int j = 0; j < temp.m; j++)
-		{
-			out << temp.matrix[i][j] << " ";
-		}
-		out << endl;
-	}
-	return out;
+	unsigned int n;	
+	unsigned int m;	
 };
-template <typename SomeValueType>
-std::istream &operator >> (std::istream &input, Matrix<SomeValueType> &matr)
-{
-    for (int i = 0; i < matr.n; i++) 
-    {
-        for (int j = 0; j < matr.m; j++) 
-        {
-            if (!(input >> matr.matrix[i][j]))
-            {
-                throw "Error matrix fill";
-            }
-        }
-    }
-    return input;
-};*/
 #include "matrix.cpp"
 #endif
